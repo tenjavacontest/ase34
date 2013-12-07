@@ -45,6 +45,7 @@ public class Fish {
     private Entity entity;
 
     public Fish(FishType type) {
+        Validate.notNull(type);
         this.type = type;
     }
 

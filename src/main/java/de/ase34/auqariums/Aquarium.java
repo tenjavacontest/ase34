@@ -1,5 +1,6 @@
 package de.ase34.auqariums;
 
+import org.apache.commons.lang.Validate;
 import org.bukkit.Location;
 
 import com.google.common.collect.HashMultiset;
@@ -15,12 +16,17 @@ public class Aquarium {
     private Multiset<Fish> fishes;
 
     public Aquarium(Location rootBlock, String owner) {
+        Validate.notNull(rootBlock);
+        Validate.notNull(owner);
         this.rootBlock = rootBlock;
         this.owner = owner;
         this.fishes = HashMultiset.create();
     }
 
     public Aquarium(Location rootBlock, String owner, Multiset<Fish> fishes) {
+        Validate.notNull(rootBlock);
+        Validate.notNull(owner);
+        Validate.notNull(fishes);
         this.rootBlock = rootBlock;
         this.owner = owner;
         this.fishes = fishes;
