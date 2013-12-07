@@ -2,6 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>de.ase34</groupId>
   <version>0.1-SNAPSHOT</version>
+  <artifactId>Aquariums</artifactId>
   
   <repositories>
     <repository>
@@ -10,6 +11,13 @@
     </repository>
   </repositories>
   
+  <dependencies>
+    <dependency>
+      <groupId>org.bukkit</groupId>
+      <artifactId>craftbukkit</artifactId>
+      <version>1.7.2-R0.1-SNAPSHOT</version>
+    </dependency>
+  </dependencies>
   
   <build>
     <defaultGoal>clean package</defaultGoal>
@@ -41,12 +49,4 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  <artifactId>Aquariums</artifactId>
-  <dependencies>
-    <dependency>
-      <groupId>org.bukkit</groupId>
-      <artifactId>craftbukkit</artifactId>
-      <version>1.7.2-R0.1-SNAPSHOT</version>
-    </dependency>
-  </dependencies>
 </project>
