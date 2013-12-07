@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
 
-    public List<Fish> fishes;
+    private List<Fish> fishes;
 
     @Override
     public void onDisable() {
@@ -18,6 +18,10 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         // TODO Auto-generated method stub
         super.onEnable();
+    }
+
+    public List<Fish> getFishes() {
+        return fishes;
     }
 
 }

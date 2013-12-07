@@ -11,7 +11,7 @@ Comands
 -------
 
 - **/pickup** - Sets/Unsets yourself in the pickup-mode so you can pick up floating fishes - `aquariumdecorator.pickup`
-- **/place [offset]** - Places the fish in your hand at your feets. You can supply the integer `offset` if you want to playe the fish higher. - `aquariumdecorator.place`  
+- **/place [offset]** - Places the fish in your hand at your feets. You can supply the number `offset` if you want to playe the fish higher. - `aquariumdecorator.place`  
 
 Tutorial
 --------

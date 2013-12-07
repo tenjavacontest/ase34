@@ -46,33 +46,41 @@ public class Fish {
     }
 
     private FishType type;
+    private Location loc;
 
-    public Fish(FishType type) {
+    public Fish(FishType type, Location loc) {
         Validate.notNull(type);
+        Validate.notNull(loc);
         this.type = type;
+        this.loc = loc;
     }
 
-    public Fish(ItemStack stack) throws IllegalArgumentException {
+    public Fish(ItemStack stack, Location loc) throws IllegalArgumentException {
         Validate.isTrue(stack.getType() == Material.RAW_FISH, "The item must be a fish!");
 
         FishType type = FishType.getFishType(stack.getDurability());
         Validate.notNull(type, "There is no fish with durability " + stack.getDurability() + "!");
 
+        Validate.notNull(loc);
+
         this.type = type;
+        this.loc = loc;
     }
 
     public FishType getType() {
         return type;
     }
 
+    public Location getLocation() {
+        return loc;
+    }
+
     /**
      * Creates and returns this fish at the specified location.
      * 
-     * @param loc
-     *            The location to spawn
      * @return The spawned item.
      */
-    public Entity createEntity(Location loc) {
+    public Entity createEntity() {
         ItemStack stack = new ItemStack(Material.RAW_FISH, 1, type.getData());
         FloatingItem floatingItem = new FloatingItem(loc, stack);
 
