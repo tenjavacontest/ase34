@@ -5,6 +5,7 @@ import java.util.Set;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.ase34.auqariums.storage.AbstractStorage;
+import de.ase34.auqariums.storage.YAMLStorage;
 
 public class Main extends JavaPlugin {
 
@@ -18,7 +19,8 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // TODO initialize storage
+        // Initialize variables
+        storage = new YAMLStorage(getConfig());
 
         // Load aquariums
         aquariums = storage.load();

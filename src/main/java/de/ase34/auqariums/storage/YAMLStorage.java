@@ -9,8 +9,8 @@ import java.util.Set;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.configuration.Configuration;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.configuration.file.YamlConfiguration;
 
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
@@ -21,9 +21,9 @@ import de.ase34.auqariums.Fish.FishType;
 
 public class YAMLStorage implements AbstractStorage {
 
-    private YamlConfiguration config;
+    private Configuration config;
 
-    public YAMLStorage(YamlConfiguration config) {
+    public YAMLStorage(Configuration config) {
         this.config = config;
     }
 
