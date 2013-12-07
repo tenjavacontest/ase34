@@ -4,9 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.configuration.Configuration;
 
 import de.ase34.aquariumdecorator.Fish;
+import de.ase34.aquariumdecorator.Fish.FishType;
 
 public class YamlStorage implements Storage {
 
@@ -37,10 +41,25 @@ public class YamlStorage implements Storage {
         config.set("fishes", list);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public List<Fish> load() {
-        // TODO add code
-        return null;
+        ArrayList<Fish> fishes = new ArrayList<Fish>();
+
+        ArrayList<HashMap<String, Object>> list = (ArrayList<HashMap<String, Object>>) config.get("fishes");
+        for (HashMap<String, Object> map : list) {
+            FishType type = FishType.valueOf((String) map.get("type"));
+
+            HashMap<String, Object> location = (HashMap<String, Object>) map.get("location");
+            double x = (Double) location.get("x");
+            double y = (Double) location.get("y");
+            double z = (Double) location.get("z");
+            World world = Bukkit.getWorld((String) location.get("world"));
+
+            fishes.add(new Fish(type, new Location(world, x, y, z)));
+        }
+
+        return fishes;
     }
 
 }
