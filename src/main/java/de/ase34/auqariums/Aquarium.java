@@ -38,4 +38,26 @@ public class Aquarium {
         return fishes;
     }
 
+    /**
+     * Spawns all not yet spawned fishes in the aquarium
+     */
+    public void populate() {
+        for (Fish fish : fishes) {
+            if (fish.getEntity() == null) {
+                // TODO add code
+            }
+        }
+    }
+
+    /**
+     * Removes all living fishes in the aquarium.
+     */
+    public void clear() {
+        for (Fish fish : fishes) {
+            if (fish.getEntity() != null) {
+                fish.kill();
+            }
+        }
+    }
+
 }
