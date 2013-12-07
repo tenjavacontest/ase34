@@ -1,0 +1,5 @@
+main: de.ase34.aquariums.Main
+name: ${project.name}
+version: ${project.version}
+author: ase34
+description: Adds aquariums in Minecraft! With floating fishes inside! :D
