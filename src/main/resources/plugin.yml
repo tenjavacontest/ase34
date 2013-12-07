@@ -3,3 +3,7 @@ name: ${project.name}
 version: ${project.version}
 author: ase34
 description: Adds aquariums in Minecraft! With floating fishes inside! :D
+commands:
+    aquarium-add:
+        description: Adds a new aquarium at the position of your feet
+        permission: aquarium.add
