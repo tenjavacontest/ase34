@@ -7,7 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.craftbukkit.v1_6_R3.CraftServer;
 import org.bukkit.craftbukkit.v1_6_R3.CraftWorld;
 import org.bukkit.craftbukkit.v1_6_R3.entity.CraftItem;
-import org.bukkit.entity.Entity;
+import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
 
 /**
@@ -47,6 +47,7 @@ public class Fish {
 
     private FishType type;
     private Location loc;
+    private Item entity;
 
     public Fish(FishType type, Location loc) {
         Validate.notNull(type);
@@ -76,16 +77,18 @@ public class Fish {
     }
 
     /**
-     * Creates and returns this fish at the specified location.
-     * 
-     * @return The spawned item.
+     * Creates this fish at the specified location.
      */
-    public Entity createEntity() {
+    public void createEntity() {
         ItemStack stack = new ItemStack(Material.RAW_FISH, 1, type.getData());
         FloatingItem floatingItem = new FloatingItem(loc, stack);
 
         CraftItem item = new CraftItem(((CraftServer) Bukkit.getServer()), floatingItem);
         ((CraftWorld) loc.getWorld()).getHandle().addEntity(floatingItem);
-        return item;
+        this.entity = item;
+    }
+
+    public Item getEntity() {
+        return entity;
     }
 }

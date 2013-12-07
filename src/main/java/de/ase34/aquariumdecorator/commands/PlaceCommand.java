@@ -15,6 +15,10 @@ public class PlaceCommand implements CommandExecutor {
 
     private Main plugin;
 
+    public PlaceCommand(Main plugin) {
+        this.plugin = plugin;
+    }
+
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) {
