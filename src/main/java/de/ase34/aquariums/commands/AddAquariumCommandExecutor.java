@@ -26,7 +26,7 @@ public class AddAquariumCommandExecutor extends AquariumCommandExecutor {
         Player player = (Player) sender;
         Block block = player.getLocation().getBlock();
 
-        if (block.getType() != Material.WATER) {
+        if (block.getType() != Material.STATIONARY_WATER) {
             player.sendMessage(ChatColor.RED + "Your feets need to be in water!");
             return true;
         }

@@ -10,7 +10,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.configuration.Configuration;
-import org.bukkit.configuration.ConfigurationSection;
 
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
@@ -27,24 +26,27 @@ public class YAMLStorage implements AbstractStorage {
         this.config = config;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public Set<Aquarium> load() {
         Set<Aquarium> set = new HashSet<Aquarium>();
 
         for (Object obj : config.getList("aquariums")) {
-            ConfigurationSection section = (ConfigurationSection) obj;
+            HashMap<String, Object> section = (HashMap<String, Object>) obj;
+            System.out.println(section.toString());
 
             Multiset<Fish> fishes = HashMultiset.create();
-            for (String fish : section.getStringList("fishes")) {
+            for (String fish : (List<String>) section.get("fishes")) {
                 fishes.add(new Fish(FishType.valueOf(fish)));
             }
 
-            World world = Bukkit.getWorld(section.getString("rootBlock.world"));
-            double x = section.getDouble("rootBlock.x");
-            double y = section.getDouble("rootBlock.y");
-            double z = section.getDouble("rootBlock.z");
+            HashMap<String, Object> location = (HashMap<String, Object>) section.get("rootBlock");
+            World world = Bukkit.getWorld((String) location.get("world"));
+            double x = (Double) location.get("x");
+            double y = (Double) location.get("y");
+            double z = (Double) location.get("z");
 
-            Aquarium aquarium = new Aquarium(new Location(world, x, y, z), section.getString("owner"), fishes);
+            Aquarium aquarium = new Aquarium(new Location(world, x, y, z), (String) section.get("owner"), fishes);
             set.add(aquarium);
         }
 

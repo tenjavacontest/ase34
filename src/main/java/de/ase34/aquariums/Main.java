@@ -15,11 +15,18 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        // Save aquariums
+        storage.save(aquariums);
+        saveConfig();
+
         getLogger().info(getDescription().getFullName() + " disabled!");
     }
 
     @Override
     public void onEnable() {
+        // Initialize config
+        saveDefaultConfig();
+
         // Initialize variables
         storage = new YAMLStorage(getConfig());
 
