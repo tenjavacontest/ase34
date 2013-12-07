@@ -1,4 +1,4 @@
-package de.ase34.auqariums;
+package de.ase34.aquariums;
 
 import org.apache.commons.lang.Validate;
 import org.bukkit.Location;
@@ -73,6 +73,13 @@ public class Fish {
         entity = null;
     }
 
+    /**
+     * Creates and returns this fish at the specified location.
+     * 
+     * @param loc
+     *            The location to spawn
+     * @return The spawned item.
+     */
     public Entity createEntity(Location loc) {
         return loc.getWorld().dropItem(loc, new ItemStack(Material.RAW_FISH, 1, type.getData()));
     }

@@ -1,8 +1,8 @@
-package de.ase34.auqariums.commands;
+package de.ase34.aquariums.commands;
 
 import org.bukkit.command.CommandExecutor;
 
-import de.ase34.auqariums.Main;
+import de.ase34.aquariums.Main;
 
 public abstract class AquariumCommandExecutor implements CommandExecutor {
 

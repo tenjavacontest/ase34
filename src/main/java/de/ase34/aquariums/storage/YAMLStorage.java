@@ -1,4 +1,4 @@
-package de.ase34.auqariums.storage;
+package de.ase34.aquariums.storage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,9 +15,9 @@ import org.bukkit.configuration.ConfigurationSection;
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.Multiset;
 
-import de.ase34.auqariums.Aquarium;
-import de.ase34.auqariums.Fish;
-import de.ase34.auqariums.Fish.FishType;
+import de.ase34.aquariums.Aquarium;
+import de.ase34.aquariums.Fish;
+import de.ase34.aquariums.Fish.FishType;
 
 public class YAMLStorage implements AbstractStorage {
 

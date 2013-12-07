@@ -1,8 +1,8 @@
-package de.ase34.auqariums.storage;
+package de.ase34.aquariums.storage;
 
 import java.util.Set;
 
-import de.ase34.auqariums.Aquarium;
+import de.ase34.aquariums.Aquarium;
 
 public interface AbstractStorage {
 

@@ -1,4 +1,4 @@
-package de.ase34.auqariums.commands;
+package de.ase34.aquariums.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -7,8 +7,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import de.ase34.auqariums.Aquarium;
-import de.ase34.auqariums.Main;
+import de.ase34.aquariums.Aquarium;
+import de.ase34.aquariums.Main;
 
 public class AddAquariumCommandExecutor extends AquariumCommandExecutor {
 

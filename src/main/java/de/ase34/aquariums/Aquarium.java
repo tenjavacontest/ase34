@@ -1,4 +1,4 @@
-package de.ase34.auqariums;
+package de.ase34.aquariums;
 
 import org.apache.commons.lang.Validate;
 import org.bukkit.Location;
@@ -50,7 +50,7 @@ public class Aquarium {
     public void populate() {
         for (Fish fish : fishes) {
             if (fish.getEntity() == null) {
-                // TODO add code
+                fish.createEntity(rootBlock);
             }
         }
     }

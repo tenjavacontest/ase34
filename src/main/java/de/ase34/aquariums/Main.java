@@ -1,12 +1,12 @@
-package de.ase34.auqariums;
+package de.ase34.aquariums;
 
 import java.util.Set;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import de.ase34.auqariums.commands.AddAquariumCommandExecutor;
-import de.ase34.auqariums.storage.AbstractStorage;
-import de.ase34.auqariums.storage.YAMLStorage;
+import de.ase34.aquariums.commands.AddAquariumCommandExecutor;
+import de.ase34.aquariums.storage.AbstractStorage;
+import de.ase34.aquariums.storage.YAMLStorage;
 
 public class Main extends JavaPlugin {
 
