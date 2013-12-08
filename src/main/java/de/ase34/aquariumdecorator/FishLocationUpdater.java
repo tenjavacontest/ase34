@@ -1,13 +1,13 @@
 package de.ase34.aquariumdecorator;
 
-import net.minecraft.server.v1_6_R3.Entity;
-import net.minecraft.server.v1_6_R3.EntityPlayer;
-import net.minecraft.server.v1_6_R3.Packet28EntityVelocity;
-import net.minecraft.server.v1_6_R3.Packet34EntityTeleport;
+import net.minecraft.server.v1_7_R1.Entity;
+import net.minecraft.server.v1_7_R1.EntityPlayer;
+import net.minecraft.server.v1_7_R1.PacketPlayOutEntityTeleport;
+import net.minecraft.server.v1_7_R1.PacketPlayOutEntityVelocity;
 
 import org.bukkit.Bukkit;
-import org.bukkit.craftbukkit.v1_6_R3.entity.CraftItem;
-import org.bukkit.craftbukkit.v1_6_R3.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_7_R1.entity.CraftItem;
+import org.bukkit.craftbukkit.v1_7_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 public class FishLocationUpdater implements Runnable {
@@ -33,8 +33,8 @@ public class FishLocationUpdater implements Runnable {
                 Entity entity = ((CraftItem) fish.getEntity()).getHandle();
 
                 EntityPlayer eplayer = ((CraftPlayer) player).getHandle();
-                eplayer.playerConnection.sendPacket(new Packet28EntityVelocity(entity));
-                eplayer.playerConnection.sendPacket(new Packet34EntityTeleport(entity));
+                eplayer.playerConnection.sendPacket(new PacketPlayOutEntityVelocity(entity));
+                eplayer.playerConnection.sendPacket(new PacketPlayOutEntityTeleport(entity));
             }
         }
     }

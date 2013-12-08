@@ -1,4 +1,4 @@
-This is the repositiory for ase34's contribution to the [ten java contest](http://tenjava.com) using the theme *Entities*.
+This is the repositiory for ase34's contribution to the [ten java contest](http://tenjava.com) using the theme *Entities* with CraftBukkit build `1.7.2-R0.1-SNAPSHOT`.
 
 --
 

@@ -4,9 +4,9 @@ import org.apache.commons.lang.Validate;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.v1_6_R3.CraftServer;
-import org.bukkit.craftbukkit.v1_6_R3.CraftWorld;
-import org.bukkit.craftbukkit.v1_6_R3.entity.CraftItem;
+import org.bukkit.craftbukkit.v1_7_R1.CraftServer;
+import org.bukkit.craftbukkit.v1_7_R1.CraftWorld;
+import org.bukkit.craftbukkit.v1_7_R1.entity.CraftItem;
 import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
 

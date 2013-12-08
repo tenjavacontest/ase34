@@ -1,7 +1,7 @@
 package de.ase34.aquariumdecorator;
 
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.v1_6_R3.entity.CraftItem;
+import org.bukkit.craftbukkit.v1_7_R1.entity.CraftItem;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerPickupItemEvent;
