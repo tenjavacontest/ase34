@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import de.ase34.aquariumdecorator.commands.PickupCommand;
 import de.ase34.aquariumdecorator.commands.PlaceCommand;
 import de.ase34.aquariumdecorator.storage.Storage;
 import de.ase34.aquariumdecorator.storage.YamlStorage;
@@ -21,7 +22,9 @@ public class Main extends JavaPlugin {
 
         saveConfig();
 
-        // TODO kill all fishes
+        for (Fish fish : fishes) {
+            fish.getEntity().remove();
+        }
     }
 
     @Override
@@ -44,9 +47,11 @@ public class Main extends JavaPlugin {
 
         // commands
         getCommand("place").setExecutor(new PlaceCommand(this));
-        // TODO 2nd command
+        getCommand("pickup").setExecutor(new PickupCommand(this));
 
-        // TODO spawn all fishes
+        for (Fish fish : fishes) {
+            fish.createEntity();
+        }
     }
 
     public List<Fish> getFishes() {
