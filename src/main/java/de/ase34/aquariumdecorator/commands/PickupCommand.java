@@ -27,12 +27,12 @@ public class PickupCommand implements CommandExecutor {
         if (plugin.getPickupers().contains(name)) {
             plugin.getPickupers().remove(name);
 
-            sender.sendMessage(ChatColor.YELLOW + "You can now pickup placed fishes! Use '/pickup' again to disable.");
+            sender.sendMessage(ChatColor.YELLOW + "You are now unable to pickup placed fishes!");
             return true;
         } else {
             plugin.getPickupers().add(name);
 
-            sender.sendMessage(ChatColor.YELLOW + "You are now unable to pickup placed fishes!");
+            sender.sendMessage(ChatColor.YELLOW + "You can now pickup placed fishes! Use '/pickup' again to disable.");
             return true;
         }
     }
