@@ -21,7 +21,15 @@ public class FishLocationUpdater implements Runnable {
     @Override
     public void run() {
         for (Player player : Bukkit.getOnlinePlayers()) {
-            for (Fish fish : plugin.getFishes()) {
+            for (int i = 0; i < plugin.getFishes().size(); i++) {
+                Fish fish = plugin.getFishes().get(i);
+
+                if (fish.getEntity() == null) {
+                    plugin.getFishes().remove(i);
+                    i--;
+                    continue;
+                }
+
                 Entity entity = ((CraftItem) fish.getEntity()).getHandle();
 
                 EntityPlayer eplayer = ((CraftPlayer) player).getHandle();
@@ -30,5 +38,4 @@ public class FishLocationUpdater implements Runnable {
             }
         }
     }
-
 }

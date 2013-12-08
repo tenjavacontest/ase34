@@ -20,6 +20,8 @@ public class Main extends JavaPlugin {
         storage.save(fishes);
 
         saveConfig();
+
+        // TODO kill all fishes
     }
 
     @Override
@@ -35,13 +37,16 @@ public class Main extends JavaPlugin {
         pickupers = new ArrayList<String>();
 
         // event handlers
-        // TODO add code
+        getServer().getPluginManager().registerEvents(new PickupListener(this), this);
 
         // tasks
-        getServer().getScheduler().scheduleSyncRepeatingTask(this, new FishLocationUpdater(this), 0, 1);
+        getServer().getScheduler().scheduleSyncRepeatingTask(this, new FishLocationUpdater(this), 1, 1);
 
         // commands
-        getCommand("pickup").setExecutor(new PlaceCommand(this));
+        getCommand("place").setExecutor(new PlaceCommand(this));
+        // TODO 2nd command
+
+        // TODO spawn all fishes
     }
 
     public List<Fish> getFishes() {

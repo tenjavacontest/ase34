@@ -7,7 +7,7 @@ import org.bukkit.craftbukkit.v1_6_R3.CraftWorld;
 import org.bukkit.craftbukkit.v1_6_R3.inventory.CraftItemStack;
 
 /**
- * Extends the {@link EntityItem} class, but does not move.
+ * Extends the {@link EntityItem} class, but the item does not move.
  */
 public class FloatingItem extends EntityItem {
 

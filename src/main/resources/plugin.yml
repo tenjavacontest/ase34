@@ -1,0 +1,12 @@
+main: de.ase34.aquariumdecorator.Main
+name: ${project.name}
+version: ${project.version}
+author: ase34
+commands:
+    pickup:
+        description: Sets/Unsets yourself in the pickup-mode so you can pick up floating fishes
+        permission: aquariumdecorator.pickup
+    place:
+        usage: /<command> [offset] 
+        description: Places the fish in your hand at your feets. You can supply the number `offset` if you want to playe the fish higher
+        permission: aquariumdecorator.place

@@ -7,6 +7,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 import de.ase34.aquariumdecorator.Fish;
 import de.ase34.aquariumdecorator.Main;
@@ -28,7 +29,8 @@ public class PlaceCommand implements CommandExecutor {
 
         Player player = (Player) sender;
 
-        if (player.getInventory().getItemInHand().getType() != Material.RAW_FISH) {
+        ItemStack itemInHand = player.getInventory().getItemInHand();
+        if (itemInHand.getType() != Material.RAW_FISH) {
             sender.sendMessage(ChatColor.RED + "Only fishes can be placed!");
             return true;
         }
@@ -43,9 +45,10 @@ public class PlaceCommand implements CommandExecutor {
             return true;
         }
 
-        Fish fish = new Fish(player.getInventory().getItemInHand(), loc);
+        Fish fish = new Fish(itemInHand, loc);
         plugin.getFishes().add(fish);
         fish.createEntity();
+        itemInHand.setAmount(itemInHand.getAmount() - 1);
 
         sender.sendMessage(ChatColor.YELLOW + "Placed a fish!");
         return true;
