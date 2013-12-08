@@ -24,7 +24,7 @@ public class FishLocationUpdater implements Runnable {
             for (int i = 0; i < plugin.getFishes().size(); i++) {
                 Fish fish = plugin.getFishes().get(i);
 
-                if (fish.getEntity() == null) {
+                if (fish.getEntity() == null || !fish.getEntity().isValid()) {
                     plugin.getFishes().remove(i);
                     i--;
                     continue;
